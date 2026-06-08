@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UI Kit для итогового проекта</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body class="page">
+    <header class="navbar">
+      <div class="navbar__inner container">
+        <a class="navbar__brand" href="index.html">Prototype UI</a>
+        <input class="navbar__toggle" type="checkbox" id="navbar-toggle" aria-label="Открыть меню">
+        <label class="navbar__burger" for="navbar-toggle" aria-hidden="true"><span class="navbar__burger-line"></span></label>
+        <nav class="navbar__menu" aria-label="Основная навигация">
+          <a class="navbar__link navbar__link--active" href="index.html">Главная</a>
+          <a class="navbar__link" href="docs.html">Документация</a>
+          <a class="navbar__link" href="#components">Компоненты</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__content">
+          <h1 class="hero__title">Базовая дизайн-система для прототипа</h1>
+          <p class="hero__text">UI Kit включает адаптивные компоненты Button, Input, Dropdown, Checkbox, Radio, Card и Navbar. Стили разделены по структуре CSS и оформлены по методологии БЭМ.</p>
+          <div class="stack">
+            <a class="button button--primary button--large" href="docs.html">Открыть документацию</a>
+            <a class="button button--secondary button--large" href="#components">Посмотреть компоненты</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="components">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Компоненты UI Kit</h2>
+            <p class="section__description">Набор готовых блоков можно переиспользовать в финальном проекте и расширять модификаторами.</p>
+          </div>
+          <div class="grid grid--cards">
+            <article class="card card--medium">
+              <img class="card__image" src="assets/card-gradient.svg" alt="Абстрактная иллюстрация компонента">
+              <div class="card__body">
+                <h3 class="card__title">Кнопки и формы</h3>
+                <p class="card__text">Поддерживаются размеры, состояния hover, active, focus, disabled и валидационные сообщения.</p>
+              </div>
+            </article>
+            <article class="card card--without-image card--medium">
+              <div class="card__body">
+                <h3 class="card__title">Навигация</h3>
+                <p class="card__text">На десктопе меню горизонтальное, на мобильных устройствах раскрывается через hamburger toggle.</p>
+              </div>
+            </article>
+            <article class="card card--large">
+              <img class="card__image" src="assets/card-gradient.svg" alt="Пример карточки UI Kit">
+              <div class="card__body">
+                <h3 class="card__title">Карточки и сетки</h3>
+                <p class="card__text">Grid и Flexbox помогают выстраивать адаптивные галереи, панели документации и группы действий.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

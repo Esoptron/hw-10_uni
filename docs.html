@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Документация UI Kit</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body class="page">
+    <header class="navbar">
+      <div class="navbar__inner container">
+        <a class="navbar__brand" href="index.html">Prototype UI</a>
+        <input class="navbar__toggle" type="checkbox" id="navbar-toggle" aria-label="Открыть меню">
+        <label class="navbar__burger" for="navbar-toggle" aria-hidden="true"><span class="navbar__burger-line"></span></label>
+        <nav class="navbar__menu" aria-label="Основная навигация">
+          <a class="navbar__link" href="index.html">Главная</a>
+          <a class="navbar__link navbar__link--active" href="docs.html">Документация</a>
+          <a class="navbar__link" href="#buttons">Кнопки</a>
+          <a class="navbar__link" href="#forms">Формы</a>
+          <a class="navbar__link" href="#cards">Карточки</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__content">
+          <h1 class="hero__title">Документация UI Kit</h1>
+          <p class="hero__text">Страница содержит описание компонентов, примеры использования и БЭМ-классы для подключения в итоговом проекте.</p>
+        </div>
+      </section>
+
+      <section class="section" id="buttons">
+        <div class="container demo-panel">
+          <div class="section__header">
+            <h2 class="section__title">Button</h2>
+            <p class="section__description">Кнопки имеют варианты primary, secondary и disabled, три размера и состояния hover, active, focus.</p>
+          </div>
+          <div class="stack" aria-label="Примеры вариантов кнопок">
+            <button class="button button--primary button--small" type="button">Primary small</button>
+            <button class="button button--secondary button--medium" type="button">Secondary medium</button>
+            <button class="button button--primary button--large" type="button">Primary large</button>
+            <button class="button button--disabled button--medium" type="button" disabled>Disabled</button>
+          </div>
+          <code class="code">&lt;button class="button button--primary button--medium" type="button"&gt;Primary&lt;/button&gt;</code>
+        </div>
+      </section>
+
+      <section class="section" id="forms">
+        <div class="container demo-panel">
+          <div class="section__header">
+            <h2 class="section__title">Input, Dropdown, Checkbox и Radio</h2>
+            <p class="section__description">Поля поддерживают нормальное состояние, focus, error-сообщение и иконку внутри input.</p>
+          </div>
+          <div class="grid grid--cards">
+            <label class="form-field">
+              <span class="form-field__label">Поиск</span>
+              <span class="form-field__control">
+                <span class="form-field__icon" aria-hidden="true">⌕</span>
+                <input class="form-field__input form-field__input--with-icon" type="search" placeholder="Введите запрос">
+              </span>
+              <span class="form-field__message">Обычное поле с иконкой поиска.</span>
+            </label>
+
+            <label class="form-field form-field--error">
+              <span class="form-field__label">Email</span>
+              <input class="form-field__input form-field__input--error" type="email" value="wrong-email" aria-describedby="email-error">
+              <span class="form-field__message form-field__message--error" id="email-error">Введите корректный email.</span>
+            </label>
+
+            <label class="dropdown">
+              <span class="dropdown__label">Категория</span>
+              <select class="dropdown__select">
+                <option>Веб-приложение</option>
+                <option>Мобильный прототип</option>
+                <option>Админ-панель</option>
+              </select>
+            </label>
+
+            <div class="demo-panel" aria-label="Примеры выбора">
+              <h3 class="demo-panel__title">Элементы выбора</h3>
+              <label class="choice">
+                <input class="choice__input" type="checkbox" checked>
+                <span class="choice__label">Получать уведомления</span>
+              </label>
+              <label class="choice">
+                <input class="choice__input" type="radio" name="tariff" checked>
+                <span class="choice__label">Базовый тариф</span>
+              </label>
+              <label class="choice">
+                <input class="choice__input" type="radio" name="tariff">
+                <span class="choice__label">Премиум тариф</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cards">
+        <div class="container demo-panel">
+          <div class="section__header">
+            <h2 class="section__title">Card</h2>
+            <p class="section__description">Карточка содержит заголовок, изображение и текст. Модификаторы задают наличие изображения и размеры small, medium, large.</p>
+          </div>
+          <div class="grid grid--cards">
+            <article class="card card--small">
+              <img class="card__image" src="assets/card-gradient.svg" alt="Градиентная иллюстрация">
+              <div class="card__body">
+                <h3 class="card__title">Small card</h3>
+                <p class="card__text">Компактная карточка для коротких списков.</p>
+              </div>
+            </article>
+            <article class="card card--without-image card--medium">
+              <div class="card__body">
+                <h3 class="card__title">Medium without image</h3>
+                <p class="card__text">Вариант без изображения подходит для текстовых блоков и уведомлений.</p>
+              </div>
+            </article>
+            <article class="card card--large">
+              <img class="card__image" src="assets/card-gradient.svg" alt="Большая иллюстрация карточки">
+              <div class="card__body">
+                <h3 class="card__title">Large card</h3>
+                <p class="card__text">Широкая карточка для промо-блоков, статей или ключевых возможностей продукта.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="layout">
+        <div class="container demo-panel">
+          <div class="section__header">
+            <h2 class="section__title">Layout</h2>
+            <p class="section__description">Класс container центрирует контент, stack реализует flex-выравнивание, grid--cards создает адаптивную сетку карточек.</p>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Блок</th>
+                <th>Назначение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>.container</code></td>
+                <td>Центральное выравнивание контента с максимальной шириной.</td>
+              </tr>
+              <tr>
+                <td><code>.stack</code></td>
+                <td>Flexbox-группа для кнопок и inline-элементов.</td>
+              </tr>
+              <tr>
+                <td><code>.grid.grid--cards</code></td>
+                <td>CSS Grid для галерей и списков карточек.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+:where(html) {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.15;
+}
+
+:where(body) {
+  font-family: var(--font-family-base);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(main) {
+  display: block;
+}
+
+:where(button, [type="button"], [type="reset"], [type="submit"]) {
+  -webkit-appearance: button;
+}
+
+:where(input, select, textarea) {
+  color: inherit;
+}
+
+:where(:focus-visible) {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 3px;
+}
