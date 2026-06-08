@@ -1,0 +1,117 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-navbar);
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.25rem;
+  gap: var(--space-4);
+}
+
+.navbar__brand {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.navbar__toggle {
+  display: none;
+}
+
+.navbar__burger {
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+}
+
+.navbar__burger-line,
+.navbar__burger-line::before,
+.navbar__burger-line::after {
+  display: block;
+  width: 1.3rem;
+  height: 2px;
+  border-radius: 999px;
+  background: #ffffff;
+  content: "";
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.navbar__burger-line::before {
+  transform: translateY(-7px);
+}
+
+.navbar__burger-line::after {
+  transform: translateY(5px);
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.navbar__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.84);
+  font-weight: 700;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.navbar__link:hover,
+.navbar__link:focus-visible,
+.navbar__link--active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+@media (max-width: 760px) {
+  .navbar__inner {
+    flex-wrap: wrap;
+  }
+
+  .navbar__burger {
+    display: grid;
+  }
+
+  .navbar__menu {
+    display: none;
+    width: 100%;
+    padding-bottom: var(--space-4);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar__toggle:checked ~ .navbar__menu {
+    display: flex;
+  }
+
+  .navbar__toggle:checked + .navbar__burger .navbar__burger-line {
+    transform: rotate(45deg);
+  }
+
+  .navbar__toggle:checked + .navbar__burger .navbar__burger-line::before {
+    opacity: 0;
+  }
+
+  .navbar__toggle:checked + .navbar__burger .navbar__burger-line::after {
+    transform: translateY(-2px) rotate(-90deg);
+  }
+
+  .navbar__link {
+    justify-content: center;
+  }
+}
